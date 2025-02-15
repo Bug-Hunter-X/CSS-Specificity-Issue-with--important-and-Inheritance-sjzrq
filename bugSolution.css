@@ -1,0 +1,22 @@
+The solution involves restructuring the CSS to avoid the use of `!important` whenever possible.  In this specific case, we can achieve the desired effect by re-ordering selectors or using a more specific selector for the desired styling without `!important`:
+
+```css
+.parent {
+  color: blue;
+}
+
+.child {
+  color: red;
+}
+
+.child .grandchild {
+  color: green !important; /*Now this will work as expected*/
+}
+
+/*Alternatively, if you want to avoid !important entirely*/
+.parent .child .grandchild {
+  color: green;
+}
+```
+
+This revised CSS ensures that the grandchild element's style is applied correctly, demonstrating how avoiding `!important` whenever possible improves maintainability and predictability.
